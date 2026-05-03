@@ -8,7 +8,7 @@ type Ctx = { params: { formId: string } };
 
 // GET /api/forms/[formId]
 export const GET = withAuth(async (_req, session, ctx) => {
-  const form = await getFormById(ctx!.params.formId, session.organizationId);
+  const form = await getFormById(ctx!.params.formId as string, session.organizationId);
   if (!form) return apiError("Form not found", 404);
   return apiSuccess(form);
 }, "staff");
@@ -18,7 +18,7 @@ export const PATCH = withAuth(async (req, session, ctx) => {
   try {
     const body = await req.json();
     const validated = UpdateFormSchema.parse(body);
-    const form = await updateForm(ctx!.params.formId, session.organizationId, validated);
+    const form = await updateForm(ctx!.params.formId as string, session.organizationId, validated);
     if (!form) return apiError("Form not found", 404);
     return apiSuccess(form, 200, "Form updated");
   } catch (error) {
@@ -31,7 +31,7 @@ export const PATCH = withAuth(async (req, session, ctx) => {
 
 // DELETE /api/forms/[formId]
 export const DELETE = withAuth(async (_req, session, ctx) => {
-  const form = await deleteForm(ctx!.params.formId, session.organizationId);
+  const form = await deleteForm(ctx!.params.formId as string, session.organizationId);
   if (!form) return apiError("Form not found", 404);
   return apiSuccess(null, 200, "Form deleted");
 }, "manager");

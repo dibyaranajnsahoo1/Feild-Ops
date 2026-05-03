@@ -5,7 +5,7 @@ import { ZodError } from "zod";
 
 // GET /api/submissions/[id]
 export const GET = withAuth(async (_req, session, ctx) => {
-  const submission = await getSubmissionById(ctx!.params.id, session.organizationId);
+  const submission = await getSubmissionById(ctx!.params.id as string, session.organizationId);
   if (!submission) return apiError("Submission not found", 404);
 
   // Staff can only see their own submissions
@@ -26,7 +26,7 @@ export const PATCH = withAuth(async (req, session, ctx) => {
     const { status, notes } = UpdateSubmissionStatusSchema.parse(body);
 
     const submission = await updateSubmissionStatus(
-      ctx!.params.id,
+      ctx!.params.id as string,
       session.organizationId,
       status,
       session.sub,
