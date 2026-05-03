@@ -3,6 +3,8 @@ import { getSession } from "@/lib/auth/jwt";
 import Sidebar from "@/components/layout/Sidebar";
 import TopBar from "@/components/layout/TopBar";
 
+import Footer from "@/components/layout/Footer";
+
 export default async function DashboardLayout({
   children,
 }: {
@@ -18,13 +20,14 @@ export default async function DashboardLayout({
         <TopBar session={session} />
         <main
           id="main-content"
-          className="flex-1 overflow-y-auto p-6 scrollbar-thin"
+          className="flex-1 overflow-y-auto p-6 scrollbar-thin flex flex-col"
           role="main"
           aria-label="Main content"
         >
-          <div className="max-w-7xl mx-auto animate-in">
+          <div className="max-w-7xl mx-auto animate-in flex-1 w-full">
             {children}
           </div>
+          <Footer />
         </main>
       </div>
     </div>
