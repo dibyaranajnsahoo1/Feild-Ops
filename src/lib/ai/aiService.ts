@@ -183,7 +183,7 @@ export async function chatWithContext(
     recentSummaries: string[];
   }
 ): Promise<string> {
-  const prompt = `You are a helpful field operations assistant for site "${context.context?.siteName ?? "Unknown"}".
+  const prompt = `You are a helpful field operations assistant for site "${context?.siteName ?? "Unknown"}".
 
 Available forms: ${context.formTitles?.join(", ") ?? "N/A"}
 Recent activity summaries:
