@@ -38,5 +38,11 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "next.config.js"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "jest.setup.ts",
+    "jest.config.ts",
+    "playwright.config.ts",
+    "__tests__"
+  ]
 }
