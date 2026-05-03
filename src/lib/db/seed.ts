@@ -41,7 +41,7 @@ async function seed() {
   console.log(`✅ Organization: ${org.name}`);
 
   // ── Users ─────────────────────────────────────────────────────────────────
-  const [admin, manager, staff1, staff2] = await User.create([
+  const [admin, manager, staff1, staff2] = (await User.create([
     {
       name: "Alice Admin",
       email: "admin@demo.fieldops.dev",
@@ -70,11 +70,11 @@ async function seed() {
       role: "staff",
       organizationId: org._id,
     },
-  ]);
+  ])) as any[];
   console.log("✅ Users: admin, manager, staff x2");
 
   // ── Sites ─────────────────────────────────────────────────────────────────
-  const [siteA, siteB, siteC] = await Site.create([
+  const [siteA, siteB, siteC] = (await Site.create([
     {
       name: "Downtown Warehouse",
       description: "Main distribution center — 3 floors, 120,000 sq ft",
@@ -95,7 +95,7 @@ async function seed() {
       location: { city: "Chicago", state: "IL", country: "USA", lat: 41.7508, lng: -87.6439 },
       organizationId: org._id,
     },
-  ]);
+  ])) as any[];
   console.log("✅ Sites: 3 created");
 
   // ── Forms ─────────────────────────────────────────────────────────────────
