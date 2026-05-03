@@ -4,6 +4,12 @@
 A production-grade **Multi-Tenant Field Operations & Inspection Management Platform** built with Next.js 14 (App Router), MongoDB, Tailwind CSS, and shadcn/ui.
 
 🔗 Live Demo: https://feild-ops-nine.vercel.app/dashboard
+**Demo credentials** :
+| Role    | Email                         | Password   |
+|---------|-------------------------------|------------|
+| Admin   | admin@demo.fieldops.dev       | Demo@1234  |
+| Manager | manager@demo.fieldops.dev     | Demo@1234  |
+| Staff   | staff@demo.fieldops.dev       | Demo@1234  |
 ---
 
 ## Architecture Overview
