@@ -27,7 +27,8 @@ export default function FormDataAnalytics({ formMetrics }: FormDataAnalyticsProp
 
   useEffect(() => {
     if (formMetrics.length > 0 && !selectedFormId) {
-      setSelectedFormId(formMetrics[0].formId);
+      const firstFormId = formMetrics[0]?.formId;
+      if (firstFormId) setSelectedFormId(firstFormId);
     }
   }, [formMetrics, selectedFormId]);
 
