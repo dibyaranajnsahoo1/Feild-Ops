@@ -1,7 +1,9 @@
-# Field Ops Platform
+# Field Ops Platform Live[https://feild-ops-nine.vercel.app/dashboard]
+
 
 A production-grade **Multi-Tenant Field Operations & Inspection Management Platform** built with Next.js 14 (App Router), MongoDB, Tailwind CSS, and shadcn/ui.
 
+🔗 Live Demo: https://feild-ops-nine.vercel.app/dashboard
 ---
 
 ## Architecture Overview
